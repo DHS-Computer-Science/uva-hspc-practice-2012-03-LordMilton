@@ -5,9 +5,10 @@ import java.util.Scanner;
 import java.text.DecimalFormat;
 
 public class Main{
-   public static void main(String[] args) {
+   public static void main(String[] args) throws Exception{
+      //Scanner scan = new Scanner(new java.io.File("X:\\Git\\Git\\GitPortable\\Data\\home\\201203\\in-out\\judging.in"));
       Scanner scan = new Scanner(System.in);
-      DecimalFormat form = new DecimalFormat("0.000");
+      //DecimalFormat form = new DecimalFormat("0.000");
       
       int n = scan.nextInt();
       for(int i = 0; i < n; i++)
@@ -28,12 +29,12 @@ public class Main{
             if(y > yMax)
                yMax = y;
             if(y < yMin)
-               yMax = y;
+               yMin = y;
          }
          double xLen = xMax - xMin;
          double yLen = yMax - yMin;
-         String area = form.format(xLen * yLen);
-         String per = form.format(xLen * 2 + yLen * 2);
+         String area = ""+(xLen * yLen);
+         String per = ""+(xLen * 2 + yLen * 2);
          System.out.println("Case "+(i+1)+": Area "+area+", Perimeter "+per);
       }
       System.exit(0);
